@@ -195,7 +195,7 @@ jobs:
     
     - name: SSH远程连接（make menuconfig）
       if: env.SSH_ACTION == 'true'
-      uses: pcgsky/debugger-action@main
+      uses: danshui-git/debugger-action@main
 
     - name: 生成"${{ matrix.target }}"配置文件
       if: env.REPO_TOKEN
@@ -230,7 +230,7 @@ jobs:
     - name: 清理releases
       continue-on-error: true
       if: env.REPO_TOKEN
-      uses: pcgsky/delete-releases-workflows@main
+      uses: ophub/delete-releases-workflows@main
       with:
         delete_releases: true
         releases_keep_keyword: targz/Update
